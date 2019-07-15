@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int testfälle = Convert.ToInt32(Console.ReadLine());
+            string string1 = Console.ReadLine();
+            string string2 = Console.ReadLine();
+            int erg = 0;
+            
+            if (string1.Length >= string2.Length)
+            {
+                for (int x = 0; x < string1.Length; x++)
+                {
+                    if (!string2.Contains(string1.Substring(x,1)))
+                    {
+                        erg = erg + 1;
+                    }
+                }
+            erg = 2 * erg;
+            Console.WriteLine(erg);
+            }
+            else
+            {
+                for (int x = 0; x < string2.Length; x++)
+                {
+                    if (!string1.Contains(string2.Substring(x,1)))
+                    {
+                        erg = erg + 1;
+                    }
+                }
+            erg = 2 * erg;
+            Console.WriteLine(erg);
+            }
+        }
+    }
+}
